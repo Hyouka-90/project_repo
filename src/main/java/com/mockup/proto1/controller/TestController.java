@@ -2,9 +2,11 @@ package com.mockup.proto1.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mockup.proto1.model.Brands;
 import com.mockup.proto1.model.Products;
 import com.mockup.proto1.service.ProductService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,10 +62,18 @@ public class TestController {
     }
 	
 	@PostMapping("/productByPost")
-    public ResponseEntity<Products> getProductPostById(@RequestBody Products p_product)
+    public ResponseEntity<List> getProductPostById(@RequestBody Products p_product)
         throws Exception {
 		Products product = productService.findById(p_product.getProduct_id());
-        return ResponseEntity.ok().body(product);
+		
+		Brands brand = product.getBrands();
+
+		List result = new ArrayList();
+
+		result.add(product);
+		//result.add(brand);
+		
+		return ResponseEntity.ok().body(result);
     }
 	
 	@PutMapping("/updateProduct")

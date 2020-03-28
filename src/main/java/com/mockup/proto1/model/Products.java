@@ -26,9 +26,7 @@ public class Products {
     private short model_year;
 	private BigDecimal list_price;
 	
-	
-    @ManyToOne
-    @JoinColumn
+
     private Brands brands;
     
     
@@ -51,6 +49,8 @@ public class Products {
 	public void setProduct_name(String product_name) {
 		this.product_name = product_name;
 	}
+
+	
 	
    /* @Column(name = "brand_id", nullable = true)
 	public int getBrand_id() {
@@ -82,6 +82,17 @@ public class Products {
 	}
 	public void setList_price(BigDecimal list_price) {
 		this.list_price = list_price;
+	}
+
+		
+    @ManyToOne
+    @JoinColumn(name="brand_id",nullable = false)
+	public Brands getBrands() {
+		return brands;
+	}
+
+	public void setBrands(Brands brands) {
+		this.brands = brands;
 	}
     
     
