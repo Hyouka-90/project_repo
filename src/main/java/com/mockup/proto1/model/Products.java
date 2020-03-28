@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -19,28 +21,17 @@ public class Products {
 	//private Long id;
     private Long product_id;
     private String  product_name;
-    //private int brand_id;
+    //private Long brand_id;
     //private int category_id;
     private short model_year;
-    private BigDecimal list_price;
-    
-    
-    
-    
-    
+	private BigDecimal list_price;
 	
 	
-	
-   /*@Id
-   @GeneratedValue(strategy = GenerationType.AUTO)
-   public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}*/
-
+    @ManyToOne
+    @JoinColumn
+    private Brands brands;
+    
+    
     
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -61,7 +52,7 @@ public class Products {
 		this.product_name = product_name;
 	}
 	
-/*	@Column(name = "brand_id", nullable = true)
+   /* @Column(name = "brand_id", nullable = true)
 	public int getBrand_id() {
 		return brand_id;
 	}
