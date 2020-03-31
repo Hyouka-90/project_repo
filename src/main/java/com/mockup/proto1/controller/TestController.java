@@ -25,29 +25,6 @@ public class TestController {
 	
 	@Autowired
 	private ProductService 	productService;
-/*
-	@RequestMapping("/test")
-	public String index() {
-		return "Greetings from Spring Boot!";
-	}
-	
-	
-	@RequestMapping("/test/getAccount")
-	public List<AccountVO> getAccount(){
-		
-		
-		List<AccountVO> accountList = new ArrayList<AccountVO>();
-		AccountVO account = new AccountVO();
-		
-		account.setAccountNo("0022012073874989");
-		account.setName("Peter KK");
-		account.setId(new Long(1));
-		
-		accountList.add(account);
-		
-		return accountList;
-	}
-*/	
 	
 	@GetMapping("/getAllProduct")
     public List<Products> getAllProduct() {
