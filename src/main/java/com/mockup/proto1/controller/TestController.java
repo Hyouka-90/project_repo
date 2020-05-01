@@ -43,12 +43,10 @@ public class TestController {
         throws Exception {
 		Products product = productService.findById(p_product.getProduct_id());
 		
-		Brands brand = product.getBrands();
 
 		List result = new ArrayList();
 
 		result.add(product);
-		//result.add(brand);
 		
 		return ResponseEntity.ok().body(result);
     }
