@@ -2,7 +2,7 @@ package com.mockup.proto1.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mockup.proto1.model.Brands;
+//import com.mockup.proto1.model.Brands;
 import com.mockup.proto1.model.Products;
 import com.mockup.proto1.service.ProductService;
 
