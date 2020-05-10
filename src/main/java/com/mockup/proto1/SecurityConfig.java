@@ -10,4 +10,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .anyRequest()
             .requiresSecure();
     }
-}*/
+} */
