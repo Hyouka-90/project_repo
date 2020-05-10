@@ -1,4 +1,4 @@
-package com.mockup.proto1;
+/*package com.mockup.proto1;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -10,4 +10,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .anyRequest()
             .requiresSecure();
     }
-}
+}*/
