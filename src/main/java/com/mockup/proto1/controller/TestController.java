@@ -27,10 +27,6 @@ import com.mockup.proto1.model.JwtRequest;
 import com.mockup.proto1.model.JwtResponse;
 
 import org.springframework.http.ResponseEntity;
-//mport org.springframework.security.authentication.AuthenticationManager;
-//import org.springframework.security.authentication.BadCredentialsException;
-//import org.springframework.security.authentication.DisabledException;
-//import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
 
 @RestController
@@ -58,6 +54,8 @@ public class TestController {
          //authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
         //final UserDetails userDetails = userDetailsService .loadUserByUsername(authenticationRequest.getUsername());
         Map<String, Object> claims = new HashMap<>();
+
+        // generate token by username
         final String token = doGenerateToken(claims, "admin");
         return ResponseEntity.ok(new JwtResponse(token));
     }
