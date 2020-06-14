@@ -1,3 +1,3 @@
 # project_repo
-project prototype 
-this project for training spring boot.
+project spring boot service
+this project for training spring boot on docker.
